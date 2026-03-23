@@ -1,33 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo App</title>
+  <title>AI Avatar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Todo App</h1>
-    <form id="todo-form">
-      <input
-        type="text"
-        id="todo-input"
-        placeholder="What needs to be done?"
-        autocomplete="off"
-        required
-      >
-      <button type="submit">Add</button>
-    </form>
-    <div id="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="active">Active</button>
-      <button class="filter" data-filter="completed">Completed</button>
+    <h1>AI Avatar</h1>
+    <div class="avatar-stage">
+      <div class="avatar" id="avatar">
+        <div class="avatar-glow"></div>
+        <div class="avatar-body">
+          <div class="avatar-head">
+            <div class="eye left-eye">
+              <div class="pupil"></div>
+            </div>
+            <div class="eye right-eye">
+              <div class="pupil"></div>
+            </div>
+            <div class="mouth" id="mouth"></div>
+          </div>
+          <div class="avatar-neck"></div>
+          <div class="avatar-torso">
+            <div class="circuit-line c1"></div>
+            <div class="circuit-line c2"></div>
+            <div class="circuit-line c3"></div>
+            <div class="energy-core"></div>
+          </div>
+        </div>
+        <div class="particles" id="particles"></div>
+      </div>
     </div>
-    <ul id="todo-list"></ul>
-    <div id="status-bar">
-      <span id="items-left">0 items left</span>
-      <button id="clear-completed">Clear completed</button>
+    <div class="status-text" id="status-text">こんにちは！私はAIアバターです</div>
+    <div class="chat-area">
+      <div class="messages" id="messages"></div>
+      <form id="chat-form">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="AIアバターに話しかけてみよう..."
+          autocomplete="off"
+          required
+        >
+        <button type="submit">送信</button>
+      </form>
+    </div>
+    <div class="mood-buttons">
+      <button class="mood-btn" data-mood="happy">😊 嬉しい</button>
+      <button class="mood-btn" data-mood="thinking">🤔 考え中</button>
+      <button class="mood-btn" data-mood="excited">🎉 興奮</button>
+      <button class="mood-btn" data-mood="sleepy">😴 眠い</button>
     </div>
   </div>
   <script src="app.js"></script>
