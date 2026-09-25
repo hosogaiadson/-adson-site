@@ -1,35 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo App</title>
+  <title>Adson</title>
+  <meta name="description" content="Adsonのプロフィールとリンク集">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Todo App</h1>
-    <form id="todo-form">
-      <input
-        type="text"
-        id="todo-input"
-        placeholder="What needs to be done?"
-        autocomplete="off"
-        required
-      >
-      <button type="submit">Add</button>
-    </form>
-    <div id="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="active">Active</button>
-      <button class="filter" data-filter="completed">Completed</button>
-    </div>
-    <ul id="todo-list"></ul>
-    <div id="status-bar">
-      <span id="items-left">0 items left</span>
-      <button id="clear-completed">Clear completed</button>
-    </div>
-  </div>
-  <script src="app.js"></script>
+  <main class="container">
+    <header class="hero">
+      <div class="avatar" aria-hidden="true">A</div>
+      <h1>Adson</h1>
+      <!-- TODO: ひとこと紹介を書き換える -->
+      <p class="tagline">ここにひとこと紹介を書きます。</p>
+    </header>
+
+    <section class="card">
+      <h2>About</h2>
+      <!-- TODO: 自己紹介を書き換える -->
+      <p>ここに自己紹介を書きます。住んでいる場所、仕事や学校、最近ハマっていることなど。</p>
+    </section>
+
+    <section class="card">
+      <h2>好きなこと・やっていること</h2>
+      <!-- TODO: 好きなことに書き換える -->
+      <ul class="tags">
+        <li>好きなこと 1</li>
+        <li>好きなこと 2</li>
+        <li>好きなこと 3</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>作ったもの</h2>
+      <a class="work" href="todo/">
+        <span class="work-title">Todo App</span>
+        <span class="work-desc">やることを追加・完了・削除できるシンプルなTodoアプリ</span>
+      </a>
+    </section>
+
+    <section class="card">
+      <h2>Links</h2>
+      <!-- TODO: href="#" を自分のURLに書き換える。使わないものは行ごと削除 -->
+      <ul class="links">
+        <li><a href="#">X（Twitter）</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="https://github.com/hosogaiadson">GitHub</a></li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> Adson</p>
+    </footer>
+  </main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
